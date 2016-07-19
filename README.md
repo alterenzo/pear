@@ -1,24 +1,45 @@
-# README
+# PEAR
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+_A responsive web-based application to enable developers to find other like-minded developers to pair program with, based on shared skills, and projects they are both passionate about._
 
-Things you may want to cover:
+![Sign Up](http://i.imgur.com/30uC5cV.png "sign_up_page")
 
-* Ruby version
+![Create Profile](http://i.imgur.com/ghGYNvJ.png "create_profile_page")
 
-* System dependencies
+![Swipe Users](http://i.imgur.com/JYJ0YjM.png "swipe_page")
 
-* Configuration
+![View Profile](http://i.imgur.com/OBsuak9.png"profile_page")
 
-* Database creation
+![View All Matches](http://i.imgur.com/DoDhJ8P.png "matches_page")
 
-* Database initialization
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+```
+As a user
+so that I can find a pair
+I want to select tags for skills
+```
+```
+As a user
+so that I can login easily
+I want to sign in with github
+```
+```
+As a user
+so that I can create my profile
+I want to be able to specify more about myself
+```
+```
+As a user
+so that I can seek help with my current project
+I want to be able to show information about my project
+```
+```
+As a user
+so that I can provide further information on my projects
+I want other users to be able to view my project's readme
+```
+```
+As a user
+so that I can find a pair
+I want to see other user's profiles and an email
+```
