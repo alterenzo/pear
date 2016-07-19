@@ -1,0 +1,5 @@
+<%= form_for @user, url: profiles_path, method: "post" do |f| %>
+  <%= f.label :about_me %>
+  <%= f.text_area :about_me %>
+  <%= f.submit %>
+<% end %>
