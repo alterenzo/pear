@@ -16,7 +16,7 @@ class ProfilesController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:tags, :about_me, :current_project, :github_repo)
+    params.require(:user).permit(:tag_list, :about_me, :current_project, :github_repo)
   end
 
 end

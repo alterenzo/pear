@@ -1,12 +1,11 @@
 class User < ApplicationRecord
+  acts_as_taggable
   # before_save :split_tags
   # serialize :tags, Array
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable,
          :omniauthable, :omniauth_providers => [:github]
-
-  has_and_belongs_to_many :tags
 
   # def split_tags
   #   self.tags = self.tags.split(',')
