@@ -6,7 +6,6 @@ Devise.setup do |config|
   # confirmation, reset password and unlock tokens in the database.
   # Devise will use the `secret_key_base` as its `secret_key`
   # by default. You can change it below and use your own secret key.
-  # config.secret_key = '79bf95d870d31423a005f6f7be66a3c1b0dcc0cfe2346025bac6b2107c55923a781bb250e2634ee4227ffcb9e8b6f9bc835183630a59ce3a6c4a0df63d89b8b7'
 
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,
@@ -108,7 +107,6 @@ Devise.setup do |config|
   config.stretches = Rails.env.test? ? 1 : 11
 
   # Set up a pepper to generate the hashed password.
-  # config.pepper = 'fb0ab507e1ff41652f74be0c4002389dcbba5cf928ae49d8854191db9a0d4a3707c9d1f333893994d9c828322c4d48bd0dc8c25b25273f5360b350aa48c98ba9'
 
   # Send a notification email when the user's password is changed
   # config.send_password_change_notification = false
@@ -271,10 +269,7 @@ Devise.setup do |config|
   # When using OmniAuth, Devise cannot automatically set OmniAuth path,
   # so you need to do it manually. For the users scope, it would be:
   # config.omniauth_path_prefix = '/my_engine/users/auth'
-  config.omniauth :github, '151f5ab778fe5079dccd', ENV['GITHUB_APP_SECRET'],
-  callback_url: "http://localhost:3000/users/auth/github/callback",
-  scope: "user.email"
-
-
-
+  config.omniauth :github, "151f5ab778fe5079dccd", ENV['GITHUB_APP_SECRET'],
+                  callback_url: "http://localhost:3000/users/auth/github/callback",
+                  scope: "user,repo"
 end
