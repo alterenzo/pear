@@ -1,4 +1,0 @@
-describe User, type: :model do
-  it { should validate_presence_of(:about_me) }
-  it { should have_many(:tags) }
-end
