@@ -1,5 +1,12 @@
 <%= form_for @user, url: profiles_path, method: "post" do |f| %>
+  <%= f.hidden_field :user_id, :value => current_user.id %>
   <%= f.label :about_me %>
   <%= f.text_area :about_me %>
-  <%= f.submit %>
+  <%= f.label :tag_list %>
+  <%= f.text_field :tag_list %>
+  <%= f.label :current_project %>
+  <%= f.text_area :current_project %>
+  <%= f.label :github_repo %>
+  <%= f.text_field :github_repo %>
+  <%= f.submit 'Create' %>
 <% end %>
