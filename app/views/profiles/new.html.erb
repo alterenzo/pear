@@ -1,12 +1,11 @@
-<%= form_for @user, url: profiles_path, method: "post" do |f| %>
+<%= bootstrap_form_for @user, url: profiles_path, method: "post" do |f| %>
   <%= f.hidden_field :user_id, :value => current_user.id %>
-  <%= f.label :about_me %>
-  <%= f.text_area :about_me %>
-  <%= f.label :tag_list %>
-  <%= f.text_field :tag_list %>
-  <%= f.label :current_project %>
-  <%= f.text_area :current_project %>
-  <%= f.label :github_repo %>
-  <%= f.text_field :github_repo %>
+  <%= f.text_area :about_me, rows: 4, label: "Tell us a bit about yourself" %>
+  <%= f.text_field :tag_list, label: "What skills do you have?" %>
+  <%= f.text_area :current_project, rows: 4, label: "What are you working on?" %>
+  <%= f.text_field :github_repo, label: "Link to your project's GitHub repository" %>
   <%= f.submit 'Create' %>
 <% end %>
+<script>
+  $('#user_tag_list').tagsInput();
+</script>

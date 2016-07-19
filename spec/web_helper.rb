@@ -3,38 +3,18 @@ def add_tag(tag)
   click_button "Add"
 end
 
-def set_omniauth(opts = {})
-  default = {:provider => :github,
-             :uuid     => "1234",
-             :github => {
-                            :email => "example@example.com"
-                        }
-            }
-
-  credentials = default.merge(opts)
-  provider = credentials[:provider]
-  user_hash = credentials[provider]
-
+def set_github_omniauth
   OmniAuth.config.test_mode = true
-
-  OmniAuth.config.mock_auth[provider] = {
-    'uid' => credentials[:uuid],
-    "extra" => {
-      "user_hash" => {
-        "email" => user_hash[:email]
-      }
-    }
-  }
-
+  OmniAuth.config.mock_auth[:github] = OmniAuth::AuthHash.new({ "provider" => "github", "uid" => "65", "info" => {"email" => "user1@user1.com"} })
 end
 
-def set_invalid_omniauth(opts = {})
-
-  credentials = { :provider => :github,
-                  :invalid  => :invalid_crendentials
-                 }.merge(opts)
-
+def set_github_omniauth_invalid
   OmniAuth.config.test_mode = true
-  OmniAuth.config.mock_auth[credentials[:provider]] = credentials[:invalid]
+  OmniAuth.config.mock_auth[:github] = :invalid_crendentials
+end
 
+def click_github_sign_in
+  within "#landing" do
+    click_link "Sign in with GitHub"
+  end
 end

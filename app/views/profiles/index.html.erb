@@ -1,5 +1,5 @@
-<% if User.all.any? %>
+<% if current_user %>
   <%= "hi" %>
 <% else %>
-  <%= "no profiles yet"%>
+  <%= link_to 'Sign in with GitHub', user_github_omniauth_authorize_url %>
 <% end %>

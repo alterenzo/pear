@@ -18,7 +18,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'bootstrap-sass'
 gem 'font-awesome-sass'
 gem 'acts-as-taggable-on', :git => 'https://github.com/F3pix/acts-as-taggable-on'
-
+gem 'bootstrap_form'
 
 group :development, :test do
   gem 'byebug', platform: :mri
