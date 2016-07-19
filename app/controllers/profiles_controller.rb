@@ -4,7 +4,11 @@ class ProfilesController < ApplicationController
   end
 
   def new
-    @user = User.find(id: current_user.id)
+    @user = User.find(params[:id])
+  end
+
+  def show
+    @user = User.find(params[:id])
   end
 
 end
