@@ -4,7 +4,7 @@ class ProfilesController < ApplicationController
   end
 
   def new
-    @user = User.find(id: current_user.id)
+    @user = User.find(current_user.id)
   end
 
 end
