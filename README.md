@@ -1,5 +1,7 @@
 # PEAR
 
+![Logo](http://imgur.com/eO3ga0F)
+
 _A responsive web-based application to enable developers to find other like-minded developers to pair program with, based on shared skills, and projects they are both passionate about._
 
 ![Sign Up](http://i.imgur.com/30uC5cV.png "sign_up_page")
