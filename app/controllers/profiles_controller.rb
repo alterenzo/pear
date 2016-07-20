@@ -11,7 +11,7 @@ class ProfilesController < ApplicationController
   def create
     @user = User.find(current_user.id)
     @user.update(user_params)
-    redirect_to profiles_path
+    redirect_to profile_path(@user)
   end
 
   def show

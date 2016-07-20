@@ -13,8 +13,11 @@
     <div class="collapse navbar-collapse" id="bs-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
         <% if current_user %>
-        <li class="navbar-text">
-          Hi <%= current_user.email %>
+        <li class="navbar-brand" style="margin-right: -30px; margin-top: -20px;">
+          <%= link_to image_tag("https://avatars2.githubusercontent.com/u/#{current_user.uid}?v=3&s=30"), profile_path(current_user) %>
+        </li>
+        <li>
+          <%= link_to current_user.email, profile_path(current_user) %>
         <li>
           <%= link_to "Edit Profile", "#" %>
         </li>

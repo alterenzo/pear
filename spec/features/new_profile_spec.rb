@@ -16,7 +16,9 @@ feature "New profile" do
         with: "http://www.github.com/death_star"
       click_button "Create"
 
-      expect(current_path).to eq profiles_path
+      user = User.find_by_uid_and_provider("65", "github")
+      expect(current_path).to eq profile_path(user)
+      expect(page).to have_content("I am awesome!")
     end
   end
 end
