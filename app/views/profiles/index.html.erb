@@ -1,5 +1,13 @@
-<% if current_user %>
-    No profiles yet
-<% else %>
-  <%= link_to 'Sign in with GitHub', user_github_omniauth_authorize_url %>
-<% end %>
+<div id="cards">
+
+</div>
+
+<script type="text/javascript">
+  $( document ).ready(function() {
+
+    $.get( "<%= profile_path(@profile)  %>", function(data) {
+      $( "#cards" ).html( data )
+    });
+
+  });
+</script>
