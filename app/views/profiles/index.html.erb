@@ -1,4 +1,4 @@
-<div id="cards">
+<div id="card">
   <img id="profile_image" src="https://avatars2.githubusercontent.com/u/#{@user.uid}?v=3&s=300" />
   <h2 id="profile_name">loading ...</h2>
   <h3 id="profile_user_name">loading ...</h3>
@@ -25,20 +25,18 @@
       });
     }
 
-    $( "#decision_no" ).click(function() {
-
-      $.post( "<%= decisions_path %>", { decision: this.id }, function(data) {
+    function makeDecision(buttonId) {
+      $.post( "<%= decisions_path %>", { decision: buttonId }, function(data) {
         getCard(data.id)
-      })
+      });
+    }
 
+    $( "#decision_no" ).click(function() {
+      makeDecision(this.id);
     });
 
     $( "#decision_yes" ).click(function() {
-
-      $.post( "<%= decisions_path %>", { decision: this.id }, function(data) {
-        getCard(data.id)
-      })
-
+      makeDecision(this.id);
     });
 
   });
