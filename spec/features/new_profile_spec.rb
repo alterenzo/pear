@@ -5,7 +5,6 @@ feature "New profile" do
     scenario "user has not previously signed in with github" do
       visit root_path
       set_github_omniauth
-
       click_github_sign_in
       expect(current_path).to eq new_profile_path
 
