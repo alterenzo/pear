@@ -1,7 +1,7 @@
 class ProfilesController < ApplicationController
 
   def index
-    @profiles = User.all
+    @profile = User.offset(rand(User.count)).first
   end
 
   def new

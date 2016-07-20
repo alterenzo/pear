@@ -1,5 +1,27 @@
-<% if current_user %>
-    No profiles yet
-<% else %>
-  <%= link_to 'Sign in with GitHub', user_github_omniauth_authorize_url %>
-<% end %>
+<div id="cards">
+
+</div>
+
+<button type="button" id="decision_no">No</button>
+<button type="button" id="decision_yes">Yes</button>
+
+<script type="text/javascript">
+  $( document ).ready(function() {
+
+    function getCard(userId) {
+      $.get( "/profiles/" + userId, function(data) {
+        $( "#cards" ).html( data )
+      });
+    }
+
+    $( "#decision_no" ).click(function() {
+
+      $.post( "<%= decisions_path %>", function(data) {
+        console.log(data.id);
+        getCard(data.id)
+      })
+
+    });
+
+  });
+</script>
