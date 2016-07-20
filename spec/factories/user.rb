@@ -4,8 +4,11 @@ FactoryGirl.define do
       "user#{n}@example.com"
     end
 
+    id 1
+    about_me "My name is James Brown"
+    current_project "Horse tinder"
+    github_repo "http://ilovehorses.com"
     password "123456"
-    about_me "I like horses"
     sign_in_count 5
   end
 end
