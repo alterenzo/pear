@@ -3,7 +3,8 @@ FactoryGirl.define do
     sequence :email do |n|
       "user#{n}@example.com"
     end
-
+    provider 'github'
+    sequence(:uid) { |n| "#{n}"}
     id 1
     about_me "My name is James Brown"
     current_project "Horse tinder"

@@ -1,5 +1,37 @@
 <% if current_user %>
-    No profiles yet
+  <% @profiles.each do |profile| %>
+    <div class="profile_summary">
+      <p>
+        <%= profile.email %>
+      </p>
+      <p>
+        <%= profile.about_me %>
+      </p>
+    </div>
+  <% end %>
+
+  <a class="w3-btn-floating" onclick="plusDivs(-1)">&#10094;</a>
+  <a class="w3-btn-floating" onclick="plusDivs(+1)">&#10095;</a>
+
+  <script type="text/javascript">
+    var slideIndex = 1;
+    showDivs(slideIndex);
+
+    function plusDivs(n) {
+      showDivs(slideIndex += n);
+    }
+
+    function showDivs(n) {
+      var i;
+      var x = document.getElementsByClassName("profile_summary");
+      if (n > x.length) {slideIndex = 1}
+      if (n < 1) {slideIndex = x.length} ;
+      for (i = 0; i < x.length; i++) {
+          x[i].style.display = "none";
+      }
+      x[slideIndex-1].style.display = "block";
+    }
+  </script>
 <% else %>
   <%= link_to 'Sign in with GitHub', user_github_omniauth_authorize_url %>
 <% end %>
