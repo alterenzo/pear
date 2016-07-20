@@ -4,6 +4,15 @@ h1 {
 
 #card {
   margin: 0 auto;
-  width: 300px;
+  width: calc(300px + 2%);
   border: 1px solid lightgrey;
+  user-select: none;
+  cursor: pointer;
+  border-radius: 5px;
+  padding: 1%;
+}
+
+#profile_image {
+  border-radius: 5px;
+
 }

@@ -1,13 +1,15 @@
-<div id="card" class="text-center">
-  <img id="profile_image" src="" />
-  <h2 id="profile_name">loading ...</h2>
-  <h3 id="profile_user_name">loading ...</h3>
-  <p id="profile_about_me">loading ...</p>
-  <h4>Current Project:</h4>
-  <p id="profile_current_project">loading ...</p>
+<div class="card_container">
+  <div id="card" class="text-center">
+    <img id="profile_image" src="" />
+    <h2 id="profile_name">loading ...</h2>
+    <h3 id="profile_user_name">loading ...</h3>
+    <p id="profile_about_me">loading ...</p>
+    <h4>Current Project:</h4>
+    <p id="profile_current_project">loading ...</p>
 
-  <button type="button" id="left">No</button>
-  <button type="button" id="right">Yes</button>
+    <button type="button" id="left" class="btn btn-danger">No</button>
+    <button type="button" id="right" class="btn btn-success">Yes</button>
+  </div>
 </div>
 
 
@@ -43,16 +45,24 @@
 
     // ================ Single Swipe ===============
 
-    // $("#card").swipe({
-    //   swipeLeft: function(event, direction, distance, duration, fingerCount) {
-    //     console.log("You swiped " + direction );
-    //     console.log("The event is " + event)
-    //     console.log("The duration is " + duration)
-    //     console.log("The fingerCount is " + fingerCount)
-    //     makeDecision(direction);
-    //   }
-    //
-    // });
+    $("#card").swipe({
+      swipeLeft: function(event, direction, distance, duration, fingerCount) {
+        makeDecision(direction);
+        console.log("You swiped " + direction );
+        console.log("The event is " + event);
+        console.log("The duration is " + duration);
+        console.log("The fingerCount is " + fingerCount);
+
+      },
+
+      swipeRight: function(event, direction, distance, duration, fingerCount) {
+        makeDecision(direction);
+        console.log("You swiped " + direction );
+        console.log("The event is " + event);
+        console.log("The duration is " + duration);
+        console.log("The fingerCount is " + fingerCount);
+      }
+    });
 
   });
 </script>
