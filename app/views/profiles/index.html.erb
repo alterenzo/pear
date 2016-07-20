@@ -1,5 +1,10 @@
 <div id="cards">
-
+  <img id="profile_image" src="https://avatars2.githubusercontent.com/u/#{@user.uid}?v=3&s=300" />
+  <h2 id="profile_name">loading ...</h2>
+  <h3 id="profile_user_name">loading ...</h3>
+  <p id="profile_about_me">loading ...</p>
+  <h4>Current Project:</h4>
+  <p id="profile_current_project">loading ...</p>
 </div>
 
 <button type="button" id="decision_no">No</button>
@@ -11,8 +16,12 @@
     getCard(<%= @profile.id %>);
 
     function getCard(userId) {
-      $.get( "/profiles/" + userId, function(data) {
-        $( "#cards" ).html( data )
+      $.getJSON( "/profiles/" + userId, function(data) {
+        $( "#profile_about_me" ).html( data.about_me )
+        $( "#profile_image" ).attr( "src", "https://avatars2.githubusercontent.com/u/" + data.uid + "?v=3&s=300" )
+        $( "#profile_name" ).html( data.name )
+        $( "#profile_user_name" ).html( "@" + data.username )
+        $( "#profile_current_project" ).html( data.current_project )
       });
     }
 
