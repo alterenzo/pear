@@ -7,7 +7,7 @@
       <div class="row-fluid">
         <div class="col-sm-6">
           <h2 class="name"><%= @user.name %><h2>
-          <%= image_tag(@user.photo, :class => "profile_photo") %>
+          <%= image_tag("https://avatars2.githubusercontent.com/u/#{@user.uid}?v=3&s=300", :class => "profile_photo") %>
           <p class="about_me"><%= @user.about_me %></p>
         </div>
       </div>
