@@ -16,3 +16,4 @@
 //= require supersized.3.2.7
 //= require turbolinks
 //= require_tree .
+//= require jquery.touchSwipe

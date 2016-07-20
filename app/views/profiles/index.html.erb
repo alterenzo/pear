@@ -1,14 +1,16 @@
-<div id="card">
-  <img id="profile_image" src="https://avatars2.githubusercontent.com/u/#{@user.uid}?v=3&s=300" />
+<div id="card" class="text-center">
+  <img id="profile_image" src="" />
   <h2 id="profile_name">loading ...</h2>
   <h3 id="profile_user_name">loading ...</h3>
   <p id="profile_about_me">loading ...</p>
   <h4>Current Project:</h4>
   <p id="profile_current_project">loading ...</p>
+
+  <button type="button" id="left">No</button>
+  <button type="button" id="right">Yes</button>
 </div>
 
-<button type="button" id="decision_no">No</button>
-<button type="button" id="decision_yes">Yes</button>
+
 
 <script type="text/javascript">
   $( document ).ready(function() {
@@ -31,13 +33,26 @@
       });
     }
 
-    $( "#decision_no" ).click(function() {
+    $( "#left" ).click(function() {
       makeDecision(this.id);
     });
 
-    $( "#decision_yes" ).click(function() {
+    $( "#right" ).click(function() {
       makeDecision(this.id);
     });
+
+    // ================ Single Swipe ===============
+
+    // $("#card").swipe({
+    //   swipeLeft: function(event, direction, distance, duration, fingerCount) {
+    //     console.log("You swiped " + direction );
+    //     console.log("The event is " + event)
+    //     console.log("The duration is " + duration)
+    //     console.log("The fingerCount is " + fingerCount)
+    //     makeDecision(direction);
+    //   }
+    //
+    // });
 
   });
 </script>
