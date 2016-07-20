@@ -8,6 +8,8 @@
 <script type="text/javascript">
   $( document ).ready(function() {
 
+    getCard(<%= @profile.id %>);
+
     function getCard(userId) {
       $.get( "/profiles/" + userId, function(data) {
         $( "#cards" ).html( data )
@@ -16,8 +18,15 @@
 
     $( "#decision_no" ).click(function() {
 
-      $.post( "<%= decisions_path %>", function(data) {
-        console.log(data.id);
+      $.post( "<%= decisions_path %>", { decision: this.id }, function(data) {
+        getCard(data.id)
+      })
+
+    });
+
+    $( "#decision_yes" ).click(function() {
+
+      $.post( "<%= decisions_path %>", { decision: this.id }, function(data) {
         getCard(data.id)
       })
 
