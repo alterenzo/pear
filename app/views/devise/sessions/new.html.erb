@@ -1,5 +1,5 @@
 <div id="landing" class="text-center">
-  <a class="btn btn-lg btn-social btn-github" href="<%= user_github_omniauth_authorize_url %>">
+  <a id='github-button' class="btn btn-lg btn-social btn-github" href="<%= user_github_omniauth_authorize_url %>">
     <span class="fa fa-github"></span> Sign in with GitHub
   </a>
 </div>
@@ -17,7 +17,9 @@
 			slide_links				:	'blank',	// Individual links for each slide (Options: false, 'num', 'name', 'blank')
 			slides 					:  	[			// Slideshow Images
 				{image : "<%= image_url("landing1.jpg") %>" },
-				{image : "<%= image_url("landing2.jpg") %>" }
+				{image : "<%= image_url("landing2.jpg") %>" },
+        {image : "<%= image_url("landing3.jpg") %>" }
+
 			]
 		});
 	});
