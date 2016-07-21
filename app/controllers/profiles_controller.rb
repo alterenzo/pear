@@ -30,3 +30,8 @@ class ProfilesController < ApplicationController
   end
 
 end
+
+
+# $.each([ 52, 97 ], function( index, value ) {
+#   alert( index + ": " + value );
+# });

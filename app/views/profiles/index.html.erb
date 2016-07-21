@@ -28,7 +28,8 @@
         $( "#profile_name" ).html( data.user.name )
         $( "#profile_user_name" ).html( "@" + data.user.username )
         $( "#profile_current_project" ).html( data.user.current_project )
-        $( "#profile_skills" ).html( data.tags)
+        $( "#profile_skills" ).html( data.tags.join(" "))
+
       });
     }
 
