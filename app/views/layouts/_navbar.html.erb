@@ -28,7 +28,7 @@
         </li>
 
         <li>
-          <%= link_to "Edit Profile", "#" %>
+          <%= link_to "Edit Profile", edit_profile_path(current_user) %>
         </li>
         <li>
           <%= link_to "Logout", destroy_user_session_url, method: :delete %>
