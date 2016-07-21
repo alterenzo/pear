@@ -12,7 +12,8 @@
 #
 src_files:
   - assets/application.js
-
+  - spec/javascripts/helpers/mock-ajax.js
+  
 # stylesheets
 #
 # Return an array of stylesheet filepaths relative to src_dir to include before jasmine specs.
@@ -132,4 +133,3 @@ boot_files:
 # random: true
 #
 random:
-
