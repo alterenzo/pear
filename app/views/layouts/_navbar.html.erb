@@ -7,17 +7,26 @@
         <span class="icon-bar"></span>
       </button>
       <div class="navbar-brand">
-        <%= image_tag("pear_logo.png", :class => "logo") %>
+        <% if current_user %>
+          <%= link_to image_tag("pear_logo.png", :class => "logo"), root_path %>
+        <% else %>
+          <%= image_tag("pear_logo.png", :class => "logo") %>
+        <% end %>
       </div>
     </div>
     <div class="collapse navbar-collapse" id="bs-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
         <% if current_user %>
+        <li>
+          <%= link_to "Find a Pear", "#" %>
+        </li>
         <li class="navbar-brand" style="margin-right: -30px; margin-top: -20px;">
           <%= link_to image_tag("https://avatars2.githubusercontent.com/u/#{current_user.uid}?v=3&s=30"), profile_path(current_user) %>
         </li>
         <li>
           <%= link_to current_user.email, profile_path(current_user) %>
+        </li>
+
         <li>
           <%= link_to "Edit Profile", "#" %>
         </li>

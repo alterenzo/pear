@@ -14,8 +14,6 @@
   </div>
 </div>
 
-
-
 <script type="text/javascript">
   $( document ).ready(function() {
 
@@ -52,19 +50,10 @@
     $("#card").swipe({
       swipeLeft: function(event, direction, distance, duration, fingerCount) {
         makeDecision(direction);
-        console.log("You swiped " + direction );
-        console.log("The event is " + event);
-        console.log("The duration is " + duration);
-        console.log("The fingerCount is " + fingerCount);
-
       },
 
       swipeRight: function(event, direction, distance, duration, fingerCount) {
         makeDecision(direction);
-        console.log("You swiped " + direction );
-        console.log("The event is " + event);
-        console.log("The duration is " + duration);
-        console.log("The fingerCount is " + fingerCount);
       }
     });
 
