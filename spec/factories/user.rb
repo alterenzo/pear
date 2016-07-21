@@ -11,5 +11,6 @@ FactoryGirl.define do
     sign_in_count 5
     name "James Brown"
     photo "https://avatars0.githubusercontent.com/u/17764313?v=3&s=460"
+    tag_list "ruby"
   end
 end
