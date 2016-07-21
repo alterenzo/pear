@@ -23,6 +23,7 @@ gem 'rspec-json_expectations'
 
 group :development, :test do
   gem 'byebug', platform: :mri
+  gem 'jasmine'
 end
 
 group :development do
