@@ -7,8 +7,11 @@ require "web_helper"
 require "rspec/rails"
 require "rspec/json_expectations"
 require "capybara/rails"
+require 'simplecov'
+SimpleCov.start
 
 ActiveRecord::Migration.maintain_test_schema!
+
 
 Shoulda::Matchers.configure do |config|
   config.integrate do |with|
@@ -18,6 +21,7 @@ Shoulda::Matchers.configure do |config|
 end
 
 RSpec.configure do |config|
+  config.infer_spec_type_from_file_location!
   config.include FactoryGirl::Syntax::Methods
   config.include Warden::Test::Helpers
 
