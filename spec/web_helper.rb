@@ -18,3 +18,17 @@ def click_github_sign_in
     click_link "Sign in with GitHub"
   end
 end
+
+def sign_in_and_create_profile
+  visit root_path
+  set_github_omniauth
+  click_github_sign_in
+  expect(current_path).to eq new_profile_path
+
+  fill_in "Tell us a bit about yourself", with: "I am awesome!"
+  fill_in "What skills do you have?", with: "ruby,javascript"
+  fill_in "What are you working on?", with: "death star soft"
+  fill_in "Link to your project's GitHub repository",
+    with: "http://www.github.com/death_star"
+  click_button "Create"
+end
