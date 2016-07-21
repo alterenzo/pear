@@ -16,9 +16,10 @@ class ProfilesController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+
     respond_to do |format|
       format.html
-      format.json { render json: @user }
+      format.json { render json: { user: @user, tags: @user.tag_list}}
     end
   end
 
@@ -29,3 +30,8 @@ class ProfilesController < ApplicationController
   end
 
 end
+
+
+# $.each([ 52, 97 ], function( index, value ) {
+#   alert( index + ": " + value );
+# });
