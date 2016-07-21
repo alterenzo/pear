@@ -14,4 +14,17 @@ feature "the user can add skills" do
     expect(current_path).to eq profile_path(user)
     expect(page).to have_content("javascript")
   end
+
+  # scenario "when checking user profile cards they should display skills" do
+  #   visit root_path
+  #   set_github_omniauth
+  #   click_github_sign_in
+  #   expect(current_path).to eq new_profile_path
+
+  #   fill_in "What skills do you have?", with: "javascript"
+  #   click_button "Create"
+  #   visit root_path
+
+  #   expect(page).to have_content("javascript")
+  # end
 end
