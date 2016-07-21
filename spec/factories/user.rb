@@ -4,7 +4,6 @@ FactoryGirl.define do
       "user#{n}@example.com"
     end
 
-    id 1
     about_me "My hobbies are drinking milk and riding tractors"
     current_project "Horse tinder"
     github_repo "http://ilovehorses.com"
