@@ -1,6 +1,8 @@
 class User < ApplicationRecord
   acts_as_taggable
 
+  has_many :decisions, foreign_key: :by_user
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable,
          :omniauthable, :omniauth_providers => [:github]
