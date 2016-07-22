@@ -1,10 +1,10 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/annasmith/Desktop/Projects/pear/spec/features/profiles_spec.rb": [
+      "/Users/joestephens/Projects/pear/spec/features/profiles_spec.rb": [
         null
       ],
-      "/Users/annasmith/Desktop/Projects/pear/spec/features/show_profile_spec.rb": [
+      "/Users/joestephens/Projects/pear/spec/features/show_profile_spec.rb": [
         1,
         null,
         1,
@@ -33,81 +33,12 @@
         1,
         1,
         1,
-        null,
-        null,
-        null,
-        null
-      ],
-      "/Users/annasmith/Desktop/Projects/pear/spec/features/tags_feature_spec.rb": [
-        1,
-        null,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        null,
-        1,
-        1,
-        null,
-        1,
-        1,
-        1,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
         null,
         null,
         null,
         null
       ],
-      "/Users/annasmith/Desktop/Projects/pear/spec/features/update_profile_spec.rb": [
-        1,
-        null,
-        1,
-        null,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        null,
-        null,
-        1,
-        1,
-        1,
-        1,
-        null,
-        null,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        null,
-        null
-      ],
-      "/Users/annasmith/Desktop/Projects/pear/spec/features/user_sign_in_spec.rb": [
-        1,
-        null,
+      "/Users/joestephens/Projects/pear/spec/features/tags_feature_spec.rb": [
         1,
         null,
         1,
@@ -117,42 +48,111 @@
         1,
         1,
         null,
-        null,
         1,
         1,
-        1,
-        1,
-        1,
-        1,
-        null,
-        null,
-        null,
-        1,
-        null,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        null,
         null,
         1,
         1,
         1,
         null,
         null,
-        1,
-        1,
-        1,
-        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
         null,
         null,
         null,
         null,
         null
       ],
-      "/Users/annasmith/Desktop/Projects/pear/spec/models/decision_spec.rb": [
+      "/Users/joestephens/Projects/pear/spec/features/update_profile_spec.rb": [
+        1,
+        null,
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null
+      ],
+      "/Users/joestephens/Projects/pear/spec/features/user_sign_in_spec.rb": [
+        1,
+        null,
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null,
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "/Users/joestephens/Projects/pear/spec/models/decision_spec.rb": [
         1,
         null,
         2,
@@ -161,7 +161,7 @@
         null,
         null
       ],
-      "/Users/annasmith/Desktop/Projects/pear/app/models/decision.rb": [
+      "/Users/joestephens/Projects/pear/app/models/decision.rb": [
         1,
         1,
         1,
@@ -169,7 +169,7 @@
         1,
         null
       ],
-      "/Users/annasmith/Desktop/Projects/pear/spec/models/user_spec.rb": [
+      "/Users/joestephens/Projects/pear/spec/models/user_spec.rb": [
         1,
         null,
         2,
@@ -181,7 +181,7 @@
         2,
         null
       ],
-      "/Users/annasmith/Desktop/Projects/pear/spec/requests/decisions_spec.rb": [
+      "/Users/joestephens/Projects/pear/spec/requests/decisions_spec.rb": [
         1,
         null,
         1,
@@ -240,7 +240,7 @@
         null,
         null
       ],
-      "/Users/annasmith/Desktop/Projects/pear/app/controllers/decisions_controller.rb": [
+      "/Users/joestephens/Projects/pear/app/controllers/decisions_controller.rb": [
         1,
         null,
         1,
@@ -266,7 +266,7 @@
         null,
         null
       ],
-      "/Users/annasmith/Desktop/Projects/pear/app/controllers/application_controller.rb": [
+      "/Users/joestephens/Projects/pear/app/controllers/application_controller.rb": [
         1,
         1,
         1,
@@ -280,7 +280,7 @@
         null,
         null
       ],
-      "/Users/annasmith/Desktop/Projects/pear/spec/requests/profiles_spec.rb": [
+      "/Users/joestephens/Projects/pear/spec/requests/profiles_spec.rb": [
         1,
         null,
         1,
@@ -317,7 +317,7 @@
         null,
         null
       ],
-      "/Users/annasmith/Desktop/Projects/pear/app/controllers/profiles_controller.rb": [
+      "/Users/joestephens/Projects/pear/app/controllers/profiles_controller.rb": [
         1,
         null,
         1,
@@ -366,7 +366,7 @@
         null,
         null
       ],
-      "/Users/annasmith/Desktop/Projects/pear/spec/requests/user_sessions_request_spec.rb": [
+      "/Users/joestephens/Projects/pear/spec/requests/user_sessions_request_spec.rb": [
         1,
         null,
         1,
@@ -392,7 +392,7 @@
         null,
         null
       ],
-      "/Users/annasmith/Desktop/Projects/pear/app/controllers/users/omniauth_callbacks_controller.rb": [
+      "/Users/joestephens/Projects/pear/app/controllers/users/omniauth_callbacks_controller.rb": [
         1,
         1,
         5,
@@ -413,6 +413,6 @@
         null
       ]
     },
-    "timestamp": 1469175360
+    "timestamp": 1469175622
   }
 }

@@ -20,5 +20,6 @@ describe Users::OmniauthCallbacksController, type: :request do
       get "/users/auth/github"
       expect(response).to redirect_to(user_github_omniauth_callback_path)
     end
+
   end
 end
