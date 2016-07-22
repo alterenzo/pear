@@ -1,13 +1,14 @@
 require 'rails_helper'
 
 describe Users::OmniauthCallbacksController, type: :request do
-
+ let(:current_user) { FactoryGirl.create(:user) }
 
  describe "GET users/auth/github" do
 
    before do
      Rails.application.env_config["devise.mapping"] = Devise.mappings[:user] # If using Devise
      Rails.application.env_config["omniauth.auth"] = OmniAuth.config.mock_auth[:github]
+     User.stub(:from_omniauth).and_return(current_user)
   end
 
    it "testing omniauth hash" do

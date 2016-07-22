@@ -23,8 +23,6 @@ def sign_in_and_create_profile
   visit root_path
   set_github_omniauth
   click_github_sign_in
-  
-
   fill_in "Tell us a bit about yourself", with: "I am awesome!"
   fill_in "What skills do you have?", with: "ruby,javascript"
   fill_in "What are you working on?", with: "death star soft"
