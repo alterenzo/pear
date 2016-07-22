@@ -1,5 +1,5 @@
 describe("Cards", function() {
-  var cards, request, user, profile;
+  var cards, request, user, profile, decision;
 
   user = {
     tags: {
@@ -14,7 +14,12 @@ describe("Cards", function() {
   };
 
   profile = {
-    id: 1
+    id: 1,
+  }
+
+  decision = {
+    decision: ['left'],
+    on: ['1']
   }
 
   beforeEach(function() {
@@ -23,7 +28,7 @@ describe("Cards", function() {
     onSuccess = jasmine.createSpy('onSuccess');
     onFailure = jasmine.createSpy('onFailure');
 
-    cards = new Cards();
+    cards = new Cards(1);
   });
 
   afterEach(function() {
@@ -31,7 +36,7 @@ describe("Cards", function() {
   });
 
   it("makes a GET request to profile_path", function() {
-    cards.getCardData(1, onSuccess, {
+    cards.getCardData(onSuccess, {
       onSuccess: onSuccess,
       onFailure: onFailure
     });
@@ -59,7 +64,7 @@ describe("Cards", function() {
     request = jasmine.Ajax.requests.mostRecent();
     expect(request.url).toBe('/decisions');
     expect(request.method).toBe('POST');
-    expect(request.data()).toEqual({decision: ['left']});
+    expect(request.data()).toEqual(decision);
 
     jasmine.Ajax.requests.mostRecent().respondWith({
       "status": 200,
