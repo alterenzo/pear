@@ -1,42 +1,28 @@
 'use strict'
 
-$(document).ready(function(){
+function Cards(firstCard) {
+  this._currentCard = firstCard;
+  this._nextCard = firstCard;
+}
 
-  getCardData(1);
-
-  function getCardData(userId) {
-    $.getJSON("/profiles/" + userId, function(data) {
-      $( "#profile_about_me" ).html( data.user.about_me )
-      $( "#profile_image" ).attr( "src", "https://avatars2.githubusercontent.com/u/" + data.user.uid + "?v=3&s=300" )
-      $( "#profile_name" ).html( data.user.name )
-      $( "#profile_user_name" ).html( "@" + data.user.username )
-      $( "#profile_current_project" ).html( data.user.current_project )
-      $( "#profile_skills" ).html( data.tags.join(" "))
-    });
-  };
-
-  function makeDecision(buttonId) {
-    $.post("/decisions", { decision: buttonId }, function(data) {
-      getCardData(data.id)
-    });
-  };
-
-  $( "#left" ).click(function() {
-    makeDecision(this.id);
+Cards.prototype.getCardData = function(callback) {
+  //console.log(this._nextCard)
+  $.getJSON("/profiles/" + this._nextCard, function(data) {
+    $( "#profile_about_me" ).html( data.user.about_me )
+    $( "#profile_image" ).attr( "src", "https://avatars2.githubusercontent.com/u/" + data.user.uid + "?v=3&s=300" )
+    $( "#profile_name" ).html( data.user.name )
+    $( "#profile_user_name" ).html( "@" + data.user.username )
+    $( "#profile_current_project" ).html( data.user.current_project )
+    // $( "#profile_skills" ).html( data.tags.join(" "))
+    if (callback) callback(data);
   });
+},
 
-  $( "#right" ).click(function() {
-    makeDecision(this.id);
-  });
-
-  $("#card").swipe({
-    swipeLeft: function(event, direction, distance, duration, fingerCount) {
-      makeDecision(direction);
-    },
-
-    swipeRight: function(event, direction, distance, duration, fingerCount) {
-      makeDecision(direction);
-    }
-  });
-
-});
+Cards.prototype.makeDecision = function(buttonId, callback) {
+  console.log(this._currentCard)
+  $.post("/decisions", { decision: buttonId, on: this._currentCard }, (function(data) {
+    this._nextCard = data.id
+    this.getCardData()
+    if (callback) callback(data);
+  }).bind(this));
+};

@@ -1,58 +1,78 @@
-describe("Player", function() {
-  var player;
-  var song;
+describe("Cards", function() {
+  var cards, request, user, profile, decision;
+
+  user = {
+    tags: {
+      0: "javascript",
+      1: "rails",
+      2: "ruby"
+    },
+    user: {
+      about_me: "I LOVE HORSES",
+      github_repo: "http://findapear.com"
+    }
+  };
+
+  profile = {
+    id: 1,
+  }
+
+  decision = {
+    decision: ['left'],
+    on: ['1']
+  }
 
   beforeEach(function() {
-    player = new Player();
-    song = new Song();
+    jasmine.Ajax.install();
+
+    onSuccess = jasmine.createSpy('onSuccess');
+    onFailure = jasmine.createSpy('onFailure');
+
+    cards = new Cards(1);
   });
 
-  it("should be able to play a Song", function() {
-    player.play(song);
-    expect(player.currentlyPlayingSong).toEqual(song);
-
-    //demonstrates use of custom matcher
-    expect(player).toBePlaying(song);
+  afterEach(function() {
+    jasmine.Ajax.uninstall();
   });
 
-  describe("when song has been paused", function() {
-    beforeEach(function() {
-      player.play(song);
-      player.pause();
+  it("makes a GET request to profile_path", function() {
+    cards.getCardData(onSuccess, {
+      onSuccess: onSuccess,
+      onFailure: onFailure
     });
 
-    it("should indicate that the song is currently paused", function() {
-      expect(player.isPlaying).toBeFalsy();
+    request = jasmine.Ajax.requests.mostRecent();
+    expect(request.url).toBe('/profiles/1');
+    expect(request.method).toBe('GET');
+    expect(onSuccess).not.toHaveBeenCalled();
 
-      // demonstrates use of 'not' with a custom matcher
-      expect(player).not.toBePlaying(song);
+    jasmine.Ajax.requests.mostRecent().respondWith({
+      "status": 200,
+      "contentType": "application/json",
+      "responseText": JSON.stringify(user)
     });
 
-    it("should be possible to resume", function() {
-      player.resume();
-      expect(player.isPlaying).toBeTruthy();
-      expect(player.currentlyPlayingSong).toEqual(song);
+    expect(onSuccess).toHaveBeenCalledWith(user);
+  });
+
+  it("makes a POST request to decisions_path", function() {
+    cards.makeDecision('left', onSuccess, {
+      onSuccess: onSuccess,
+      onFailure: onFailure
     });
-  });
 
-  // demonstrates use of spies to intercept and test method calls
-  it("tells the current song if the user has made it a favorite", function() {
-    spyOn(song, 'persistFavoriteStatus');
+    request = jasmine.Ajax.requests.mostRecent();
+    expect(request.url).toBe('/decisions');
+    expect(request.method).toBe('POST');
+    expect(request.data()).toEqual(decision);
 
-    player.play(song);
-    player.makeFavorite();
-
-    expect(song.persistFavoriteStatus).toHaveBeenCalledWith(true);
-  });
-
-  //demonstrates use of expected exceptions
-  describe("#resume", function() {
-    it("should throw an exception if song is already playing", function() {
-      player.play(song);
-
-      expect(function() {
-        player.resume();
-      }).toThrowError("song is already playing");
+    jasmine.Ajax.requests.mostRecent().respondWith({
+      "status": 200,
+      "contentType": "application/json",
+      "responseText": JSON.stringify(profile)
     });
+
+    expect(onSuccess).toHaveBeenCalledWith(profile);
   });
+
 });

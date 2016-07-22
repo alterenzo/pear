@@ -30,3 +30,11 @@ def sign_in_and_create_profile
     with: "http://www.github.com/death_star"
   click_button "Create"
 end
+
+def create_decision(direction: "left", user: )
+  post decisions_path, params: {
+    "decision" => direction,
+    "on"       => user,
+    format:       :json
+  }
+end
