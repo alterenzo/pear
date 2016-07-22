@@ -14,4 +14,28 @@
   </div>
 </div>
 
-<script src="<%= javascript_url("jquery.cards") %>"
+<script src="<%= javascript_url("jquery.cards") %>" type="text/javascript"></script>
+<script>
+  $(document).ready(function(){
+    var cards = new Cards(<%= @profile.id %>);
+    cards.getCardData();
+
+    $( "#left" ).click(function() {
+      cards.makeDecision(this.id);
+    });
+
+    $( "#right" ).click(function() {
+      cards.makeDecision(this.id);
+    });
+
+    $("#card").swipe({
+      swipeLeft: function(event, direction, distance, duration, fingerCount) {
+        cards.makeDecision(direction);
+      },
+
+      swipeRight: function(event, direction, distance, duration, fingerCount) {
+        cards.makeDecision(direction);
+      }
+    });
+  });
+</script>
