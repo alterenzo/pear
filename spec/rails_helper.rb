@@ -10,6 +10,8 @@ require "capybara/rails"
 require 'simplecov'
 SimpleCov.start
 
+
+
 ActiveRecord::Migration.maintain_test_schema!
 
 
@@ -24,6 +26,7 @@ RSpec.configure do |config|
   config.infer_spec_type_from_file_location!
   config.include FactoryGirl::Syntax::Methods
   config.include Warden::Test::Helpers
+  config.include Devise::TestHelpers, :type => :controller
 
   config.before :suite do
     Warden.test_mode!
