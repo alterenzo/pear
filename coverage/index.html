@@ -14,7 +14,7 @@
       <img src="./assets/0.10.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2016-07-22T09:20:22+01:00">2016-07-22T09:20:22+01:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2016-08-09T20:23:08+01:00">2016-08-09T20:23:08+01:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -73,7 +73,7 @@
       <tr>
         <td class="strong"><a href="#ae2bdc3b55c45fd5488a7a987ca194cafb47a564" class="src_link" title="app/controllers/profiles_controller.rb">app/controllers/profiles_controller.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>47</td>
+        <td>42</td>
         <td>23</td>
         <td>23</td>
         <td>0</td>
@@ -193,7 +193,7 @@
       <tr>
         <td class="strong"><a href="#eda0d2d7db0665d3f2dc18afd3f3f16057ac1abc" class="src_link" title="spec/requests/user_sessions_request_spec.rb">spec/requests/user_sessions_request_spec.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>24</td>
+        <td>25</td>
         <td>14</td>
         <td>14</td>
         <td>0</td>
@@ -732,36 +732,6 @@
           
           
           <code class="ruby">end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="43">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="44">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="45">
-          
-          
-          <code class="ruby"># $.each([ 52, 97 ], function( index, value ) {</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="46">
-          
-          
-          <code class="ruby">#   alert( index + &quot;: &quot; + value );</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="47">
-          
-          
-          <code class="ruby"># });</code>
         </li>
       
     </ol>
@@ -1973,7 +1943,7 @@
         <li class="covered" data-hits="2" data-linenumber="3">
           <span class="hits">2</span>
           
-          <code class="ruby">it { is_expected.to have_many :tags }</code>
+          <code class="ruby">  it { should have_many(:tags) }</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="4">
@@ -1985,19 +1955,19 @@
         <li class="covered" data-hits="1" data-linenumber="5">
           <span class="hits">1</span>
           
-          <code class="ruby">it &quot;has a valid factory&quot; do</code>
+          <code class="ruby">  it &quot;has a valid factory&quot; do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="6">
           <span class="hits">1</span>
           
-          <code class="ruby">   FactoryGirl.create(:user).should be_valid</code>
+          <code class="ruby">     FactoryGirl.create(:user).should be_valid</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="7">
           
           
-          <code class="ruby"> end</code>
+          <code class="ruby">   end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="8">
@@ -2009,7 +1979,7 @@
         <li class="covered" data-hits="2" data-linenumber="9">
           <span class="hits">2</span>
           
-          <code class="ruby">it { should have_many(:decisions) }</code>
+          <code class="ruby">  it { should have_many(:decisions) }</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="10">
@@ -2759,10 +2729,16 @@
         <li class="never" data-hits="" data-linenumber="23">
           
           
-          <code class="ruby">  end</code>
+          <code class="ruby"></code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="24">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="25">
           
           
           <code class="ruby">end</code>

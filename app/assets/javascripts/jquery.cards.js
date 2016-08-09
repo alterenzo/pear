@@ -26,7 +26,6 @@ Cards.prototype.getCardData = function(callback) {
 },
 
 Cards.prototype.makeDecision = function(buttonId, callback) {
-  console.log(this._currentCard)
   $.post("/decisions", { decision: buttonId, on: this._currentCard }, (function(data) {
     this._nextCard = data.id
     this.getCardData()

@@ -7,13 +7,11 @@ require "web_helper"
 require "rspec/rails"
 require "rspec/json_expectations"
 require "capybara/rails"
-require 'simplecov'
+require "simplecov"
+
 SimpleCov.start
 
-
-
 ActiveRecord::Migration.maintain_test_schema!
-
 
 Shoulda::Matchers.configure do |config|
   config.integrate do |with|

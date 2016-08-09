@@ -359,11 +359,6 @@
         4,
         null,
         null,
-        null,
-        null,
-        null,
-        null,
-        null,
         null
       ],
       "/Users/joestephens/Projects/pear/spec/requests/user_sessions_request_spec.rb": [
@@ -390,6 +385,7 @@
         1,
         null,
         null,
+        null,
         null
       ],
       "/Users/joestephens/Projects/pear/app/controllers/users/omniauth_callbacks_controller.rb": [
@@ -413,6 +409,6 @@
         null
       ]
     },
-    "timestamp": 1469175622
+    "timestamp": 1470770588
   }
 }
